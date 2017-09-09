@@ -1,0 +1,126 @@
+			@font-face {
+				font-family: Modeka;
+				src: url("../multichord/Modeka-Bold-Extended.otf");
+			}
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: #000000;
+				font-family: Times New Roman, serif;
+				font-size: 16px;
+			}
+			a {
+				color: #444499; /*#cc4444;*/
+				text-decoration: none;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+			#main {
+				background-color: #ffffff;
+				color: #000000;
+				width: 100%;
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 0px;
+			}
+			#header {
+				/*background-image: url("freealise.jpg");*/
+				background-color: #444444;
+				color: #999999;
+				margin: 0px;
+				padding: 20px;
+			}
+			#logo {
+				width: 1px;
+				height: 1px;
+				visibility: hidden;
+			}
+			#title {
+				color: #999999;
+				text-align: left;
+			}
+			#title a {
+				color: #ffffff;
+				font-family: Times New Roman, serif;
+				font-size: 48px;
+				text-decoration: none;
+				white-space: nowrap;
+				font-weight: bold;
+			}
+			#des{
+				margin: 10px 0px 10px 0px;
+			}
+			#links {
+				text-align: left;
+				width: 100%;
+				background-color: #444499; /*#cc4444;*/
+			}
+			#links a {
+				color: #ffffff;
+				font-weight: bold;
+				margin: 0px 10px 0px 10px;
+			}
+			#articles {
+				text-align: right;
+				width: 100%;
+				background-color: #ffffff;
+			}
+			#articles div {
+				float: right;
+			}
+			#articles div a {
+				font-weight: bold;
+				margin: 0px 10px 0px 10px;
+			}
+			#follow {
+				float: right;
+			}
+			#follow div {
+				text-align: right;
+			}
+			#follow a {
+				color: #ffffff;
+				margin: 0px 5px 0px 5px;
+			}
+			#rss {
+				
+			}
+			#p_title {
+				font-weight: bold;
+				text-align: center;
+				font-size: 150%;
+			}
+			#p_des{
+				text-align: center;
+			}
+			#content {
+				width: 100%;
+				float: none;
+				clear: both;
+				background-color: #ffffff;
+				text-align: center;
+				margin: 20px 20px 20px 20px;
+			}
+			#support {
+				background-color: #000000;
+				color: #ffffff;
+				border-color: #000000;
+				padding: 10px;
+				font-family: Times New Roman, serif;
+				font-size: 20px;
+				font-weight: bold;
+			}
+			#newpost {
+				text-align: center;
+				margin: 20px 20px 20px 20px;
+			}
+			#map {
+				width: 100%;
+				height: 50%;
+				position: absolute;
+				display: none;
+			}
+			@media only screen and (orientation: portrait) {
+
+			}

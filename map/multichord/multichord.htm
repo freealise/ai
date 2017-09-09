@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multichord</title>
+
+<script>
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
+    var context = new AudioContext();
+
+    function playSound(arr) {
+        var buf = new Float32Array(arr.length)
+        for (var i = 0; i < arr.length; i++) buf[i] = arr[i]
+        var buffer = context.createBuffer(1, buf.length, context.sampleRate)
+        buffer.copyToChannel(buf, 0)
+        var source = context.createBufferSource();
+        source.buffer = buffer;
+        source.connect(context.destination);
+        source.start(0);
+    }
+
+    function sineWaveAt(sampleNumber, tone) {
+        var sampleFreq = context.sampleRate / tone
+        return Math.cos(sampleNumber / (sampleFreq / (Math.PI*2)))
+    }
+
+    var arr = [], volume = 0.2, seconds = 0.25, tone = 440;
+    var amp, tone1, t;
+    var i1, n0, n;
+    var tone0=tone;
+    var x0, y0, x, y;
+    
+    function showCoords(event) {
+      if (mouseDown==true) {
+        
+        var today = new Date();
+        n = today.getTime();
+        
+        x = event.clientX;
+        y = event.clientY;
+        
+        document.getElementById("canvas").innerHTML = document.getElementById("canvas").innerHTML+'<line x1="'+x0+'" y1="'+y0+'" x2="'+x+'" y2="'+y+'" style="stroke:rgb(255,0,0);stroke-width:1" />';
+        
+        seconds=(n-n0)/1000;
+        if (seconds==0) {seconds=1;}
+        i1=context.sampleRate * seconds;
+    
+        for (var i = 0; i < i1; i++) {
+              //i is time, x is pitch, seconds is time duration of pixel
+              //on mousemove volume smoothly fades at once and new tone appears
+              //will be gradual transition on record
+              
+              //amp = sineWaveAt(i, 1/seconds) * volume;
+              
+              tone1 = Math.pow(2, (x+8*640)/640);   //(x+transpose_octaves*octave_width)/octave_width
+              tone = (tone1-tone0)*i/i1+tone0;
+    	        arr[i] = sineWaveAt(i, tone) * volume;
+    	        
+    	        /*
+    	        for (var j = 1; j < 1000; j++) {
+        	      arr[i] = arr[i] + sineWaveAt(i, tone*j) * volume/j
+              }
+              */
+        }
+        
+    	  var coords = "freq: " + tone + ", Y: " + y;
+    	  document.getElementById("demo").innerHTML = coords;
+    	  
+    	  x0 = x;
+        y0 = y;
+        tone0=tone;
+        n0=n;
+        
+        playSound(arr);
+      }
+	  }
+	
+	  var mouseDown = false;
+	  var mouseMove = false;
+	  
+	  function mouse_Move(event) {
+      mouseMove==true;
+    }
+	
+	  function mouse_Down(event) {
+	    mouseDown = true;
+	    x0=event.clientX;
+	    y0=event.clientY;
+	    
+	    var today = new Date();
+      n0 = today.getTime();
+      
+      showCoords(event);
+	  }
+	
+	  function mouse_Up(event) {
+	    mouseDown = false;
+	    var arr = [];
+	    var t;
+	  }
+</script>
+
+</head>
+<body>
+
+<div onmousedown="mouse_Down(event)" onmouseup="mouse_Up(event)" onmouseout="mouse_Up(event)" onmousemove="mouse_Move(event)" style="width:6400px;height:400px;border:1px solid black;position:absolute;top:0px;left:0px;">
+<script>
+document.write('<div style="overflow:scroll">');
+for (var i = 0; i < 8; i++) {
+	document.write('<hr size=1 style="height:5px;width:638px;float:left;margin:1px;border:0px;padding:0px;background-color:gray;">');
+}
+document.write('</div><div style="overflow:scroll">');
+for (var i = 0; i < 12*8; i++) {
+	document.write('<hr style="height:5px;width:51.3333px;float:left;margin:1px;border:0px;padding:0px;background-color:lightgray;">');
+}
+document.write('</div>');
+</script>
+
+<svg id="canvas" height="400" width="640" style="position:absolute;top:0px;left:0px;">
+  Sorry, your browser does not support inline SVG.
+</svg>
+</div>
+
+<p id="demo"></p>
+
+<a onclick="playSound(arr)" href=#>Play</a>
+
+<textarea id="matrix" style="width:100%;height:100%;position:absolute;top:400px;left:0px;">
+</textarea>
+
+</body>
+</html>

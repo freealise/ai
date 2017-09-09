@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="freealise.xsl" ?>
+
+<rss version="2.0">
+<channel>
+  <title>Freealise</title>
+  <link>https://freealise.com</link>
+  <description>the gift economy</description>
+  <keywords></keywords>
+  <sn>
+      <facebook>http://fb.me/freealise</facebook>
+      <twitter>http://twitter.com/freealise</twitter>
+	  <telegram></telegram>
+  </sn>
+  <links></links>
+  <page>
+	  <title>Home</title>
+	  <link>?p=page&amp;n=0</link>
+	  <description>
+	    
+      You sell goods or services.
+      But you are concerned about the impersonality of capitalism.
+      You wish people saw you and each other not only as a social function but a human, at work as well as elsewhere (need).
+      Donation economy solves this problem.
+      -
+      
+      -
+      Provide goods or services
+      Do NOT work for money (want)
+      Collect donations and volunteer (with supporters (contributors))
+      Join us and feature your business on the network / Use our brand and principles (franchise)
+
+          <p>Give things away for free and collect money.<br/>
+              Select the recipients for your goods and services.
+          </p>
+          
+			<p><b>Join</b> us now<br/>
+			and feature your business on the <a>network</a><br/>
+      <a href="https://multichord.com">Multichord</a> <a href="https://rosidea.ru">RosIdea</a><br/>
+            </p>
+
+			<p>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+			<input type="hidden" name="cmd" value="_s-xclick"/>
+			<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+			"/>
+			<input type="submit" id="support" border="0" value="$€£ Support"/>
+			</form>
+			</p>
+		</description>
+  </page>
+  <page>
+	  <title>About</title>
+	  <link>?p=page&amp;n=1</link>
+	  <description>
+			<p>Project story</p>
+		</description>
+  </page>
+  <page>
+	  <title>Blog</title>
+	  <link>?p=page&amp;n=2</link>
+		<description>Editor column<br/>
+            Personal story in relation to project [1st post ?]
+		</description>
+  </page>
+  <page>
+	  <title>Network</title>
+	  <link>?p=page&amp;n=3</link>
+	  <description>
+		<p>
+		Talk to each other, work together and be promoted!<br/>
+		<br/>
+		map with users and posts<br/>
+		form -> spreadsheet -> map<br/>
+		comments form -> spreadsheet -> map
+		
+		Front page: I offer / request goods / services / money for person / project once / permanently
+            
+        <form action="?p=home" method="get">
+                Request <input type="radio" name="type" value="request"/>
+                Offer <input type="radio" name="type" value="offer"/><br/>
+                a<br/>
+                Good <input type="radio" name="category" value="good"/>
+                Service (Solution, Improvement) <input type="radio" name="category" value="service"/><br/>
+                for a<br/>
+                Person <input type="radio" name="user" value="person"/>
+                Project (Organization) <input type="radio" name="user" value="project"/><br/>
+                <input type="submit" name="submit" value="Submit"/>
+        </form>
+            
+		</p>
+	</description>
+  </page>
+  <article>
+    <title>Donation Economy</title>
+    <link>?p=article&amp;n=0</link>
+    <description>
+		<p>[pic] giving away goods and services and collecting donations
+		</p>
+	</description>
+	<keywords></keywords>
+  </article>
+  <article>
+    <title>Horizontal Networking</title>
+    <link>?p=article&amp;n=1</link>
+    <description>
+		<p>[pic] a network with horizontal relations
+		</p>
+	</description>
+	<keywords></keywords>
+  </article>
+  <article>
+    <title>Divine Humanism</title>
+    <link>?p=article&amp;n=2</link>
+    <description>
+		<p>[pic] no religious affiliations
+		</p>
+	</description>
+	<keywords></keywords>
+  </article>
+  <article>
+    <title>Freedom of Expression</title>
+    <link>?p=article&amp;n=3</link>
+    <description>
+		<p>[pic] and open discussion with no limitations
+		</p>
+	</description>
+	<keywords></keywords>
+  </article>
+  <item>
+    <title>News</title>
+    <link>?p=item&amp;n=0</link>
+    <description>
+		  and issues in PDF
+	</description>
+	<keywords>test, word, the</keywords>
+  </item>
+  <item>
+    <title>News1</title>
+    <link>?p=item&amp;n=1</link>
+    <description>
+		  and issues in PDF1
+	</description>
+	<keywords>test, word1, word</keywords>
+  </item>
+</channel>
+</rss>

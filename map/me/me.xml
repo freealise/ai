@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="me.xsl" ?>
+
+<rss version="2.0">
+<channel>
+  <title>Marina Goritskaia</title>
+  <link>http://me.freealise.com</link>
+  <description>This is my personal blog</description>
+  <keywords>archives, projects</keywords>
+  <sn>
+    <facebook>http://fb.me/goritskaia</facebook>
+    <twitter>http://twitter.com/goritskaia</twitter>
+    <telegram>http://telegram.me/goritskaia</telegram>
+    <vkontakte>http://vk.com/goritskaia</vkontakte>
+    <github>http://github.com/goritskaia</github>
+    <!--<lastfm>http://last.fm/user/goritskaia</lastfm>-->
+    <couchsurfing>http://couchsurfing.com/marina.goritskaia</couchsurfing>
+    <googleplus>http://plus.google.com/+MarinaGoritskaia</googleplus>
+    <freelancer>http://freelancer.com/goritskaia</freelancer>
+    <patreon>http://patreon.com/goritskaia</patreon>
+  </sn>
+  <links>
+    <title>Steven Pressfield</title>
+    <link>http://www.stevenpressfield.com</link>
+    <description>Website of author and historian, Steven Pressfield.</description>
+  </links>
+  <links>
+    <title>The Creative Penn</title>
+    <link>http://www.thecreativepenn.com</link>
+    <description>Writing, Publishing, Book Marketing, Creative Entrepreneurship</description>
+  </links>
+  <links>
+    <title>Lateral Action</title>
+    <link>http://lateralaction.com/</link>
+    <description>Creative coach Mark McGuinness shares practical inspiration for creative professionals, and helps clients achieve life-changing goals.</description>
+  </links>
+  <page>
+	  <title>Home</title>
+	  <link>?p=page&amp;n=0</link>
+    <description>Founder of the <a href="https://freealise.com">Freealise</a> non-profit.<br/>
+     Creator of artistic venture <a href="https://multichord.com">Multichord</a> and political journal <a href="https://rosidea.ru">RosIdea</a>.<br/>
+     <!--Author of <a href="https://me.freealise.com">personal blog</a>.-->
+    
+    <p>I've got a handwritten notebook and box of archives<br/>
+       that will be made digital and published here.</p>
+    
+    <p>
+      <form action="http://www.rosidea.ru/sendy/subscribe" method="POST" accept-charset="utf-8">
+      	<label for="name">Name</label><br/>
+      	<input type="text" name="name" id="name"/>
+      	<br/>
+      	<label for="email">Email</label><br/>
+      	<input type="email" name="email" id="email"/>
+      	<br/>
+      	<input type="hidden" name="list" value="q5RH1fKJKVOwy8C5P1OOfg"/> <!--RosIdea list!-->
+      	<input type="submit" name="submit" id="submit"/>
+      </form>
+    </p>
+    
+        <p>contact form<br/>
+       (911) 141-0799<br/>
+       goritskaia(a)ya.ru</p>
+       
+       <p>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+			<input type="hidden" name="cmd" value="_s-xclick"/>
+			<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----"/>
+			<input type="submit" id="support" border="0" value="$ Support me"/>
+			</form>
+			</p>
+    </description>
+  </page>
+  <page>
+	  <title>About</title>
+	  <link>?p=page&amp;n=1</link>
+<description>
+		[story]
+		</description>
+  </page>
+  <page>
+	  <title>Blog</title>
+	  <link>?p=page&amp;n=2</link>
+	  <description>Editor column</description>
+  </page>
+  <page>
+	  <title>Friends</title>
+	  <link>?p=page&amp;n=3</link>
+		<description>
+		  <form>
+  			<select onchange="showRSS(this.value)">
+  				<option value="">Select an RSS-feed:</option>
+  				<option value="http://feeds.feedburner.com/pressfieldblog?format=xml">Steven Pressfield</option>
+  				<option value="http://www.thecreativepenn.com/feed/podcast/">The Creative Penn Podcast</option>
+  				<option value="http://feeds.feedblitz.com/lateralaction">Lateral Action</option>
+  			</select>
+		  </form>
+      <br/>
+      <div id="rssOutput">RSS-feed will be listed here...</div>
+		</description>
+  </page>
+  <item>
+    <title>Blog</title>
+    <link></link>
+    <description></description>
+  </item>
+</channel>
+</rss>
