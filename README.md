@@ -10,8 +10,7 @@ email notifications
 language
 insert juxtaposition automatically
 
-<p>
-<a href="https://wikimapia.org" target="_blank">Wikimapia</a><br/>
+<a href="https://wikimapia.org" target="_blank">Wikimapia</a>
+<a href="https://flickr.com" target="_blank">Flickr</a>
 <a href="http://bobdylanart.com" target="_blank">Bob Dylan Art</a>
-</p>
 </pre>
