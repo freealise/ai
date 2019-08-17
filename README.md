@@ -1,3 +1,4 @@
+<pre>
 todo
 ----
 map under post form
@@ -13,3 +14,4 @@ insert juxtaposition automatically
 <a href="https://wikimapia.org" target="_blank">Wikimapia</a><br/>
 <a href="http://bobdylanart.com" target="_blank">Bob Dylan Art</a>
 </p>
+</pre>
