@@ -14,9 +14,8 @@ user profiles visible
 personal donation form (otherwise income taxes)
 email notifications
 language
-insert juxtaposition automatically
+insert juxtaposition and panorama (?) automatically
 
-<a href="https://flickr.com" target="_blank">Flickr</a>
 <a href="https://wikimapia.org" target="_blank">Wikimapia</a>
 <a href="http://bobdylanart.com" target="_blank">Bob Dylan Art</a>
 </pre>
