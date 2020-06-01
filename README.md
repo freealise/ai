@@ -7,3 +7,4 @@ https://download.visinf.tu-darmstadt.de/data/from_games/ <br/>
 https://www.cityscapes-dataset.com/ <br/><br/>
 
 Needs object remover without reconstructing the whole scene.
+Generate objects behind the removed one and place them over it.
