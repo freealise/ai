@@ -8,5 +8,3 @@ https://www.cityscapes-dataset.com/ <br/><br/>
 
 Needs object remover without reconstructing the whole scene.<br/>
 Generate objects behind the removed one and place them over it.<br/><br/>
-
-Use for spectrograms (?)
