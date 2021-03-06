@@ -1,27 +1,35 @@
 <style>
+#c {
+  width:100vw;
+  height:100vh;
+  position:fixed;
+  left:0px;
+  top:0px;
+}
 #image {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
 }
 @media (orientation: landscape) {
   #image {
     transform:rotate(-90deg);
-    top: -50%;
-    left: 50%;
+    margin-top:-100px;
   }
 }
-/*@media (orientation: portrait) {
+@media (orientation: portrait) {
   #image {
-    transform:rotate(90deg);
+    margin-left:-100px;
   }
-}*/
+}
 </style>
 
 <h1>Fretless stick guitar</h1>
 <b>held as a cello, played as a piano</b><br/>
 
-<img src="images/starrboard.png" alt="Guitar" usemap="#guitar" id="image">
+<div id="c">
+  <img src="images/starrboard.png" alt="Guitar" usemap="#guitar" id="image">
+</div>
 
 <map name="guitar">
   <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
