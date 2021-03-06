@@ -1,12 +1,14 @@
 <style>
 #image {
-  width:100%;
-  height:auto;
-  clear:both;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 @media (orientation: landscape) {
   #image {
     transform:rotate(-90deg);
+    top: -50%;
+    left: 50%;
   }
 }
 /*@media (orientation: portrait) {
