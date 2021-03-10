@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Display guitar tabs in custom tuning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+body {
+  margin:0;
+}
+* {
+  background-color:#000000;
+  color:#ffffff;
+}
+#tab {
+  white-space: nowrap;
+}
+#tab, #out, #hl {
+  width:100%;
+  height:128px;
+  overflow:scroll;
+  font-size:16px;
+  user-select:none;
+}
+</style>
+</head>
+<body oncontextmenu="return false;">
+<textarea id="tab" onchange="changeTuning();">
+    D             Dmaj7         G              D
+e|---------------------------------------------------------------------------|
+B|--7--7-7--7-7---7--7-7--7-7---3--3-3--3------3--3-3--3-3/------------------|
+G|--7--7-7--7-7p6-6--6-6--6-6\4-4--4-4--4-4\2--2--2-2--2-2/------------------|
+D|--0--0-0--0-0-0-0--0-0--0-0-0-0--0-0--0-0-0--0--0-0--0-0/------------------|
+A|---------------------------------------------------------------------------|
+E|---------------------------------------------------------------------------|
+
+    D             Dmaj7         G              D
+e|---------------------------------------------------------------------------|
+B|--7--7-7--7-7---7--7-7--7-7---3--3-3--3------3--3-3--3-3-------------------|
+G|--7--7-7--7-7p6-6--6-6--6-6\4-4--4-4--4-4\2--2--2-2--2-2-------------------|
+D|--0--0-0--0-0-0-0--0-0--0-0-0-0--0-0--0-0-0--0--0-0--0-0-------------------|
+A|---------------------------------------------------------------------------|
+E|---------------------------------------------------------------------------|
+</textarea>
+<pre id="out" onclick='clearHl();'>
+</pre>
+<pre id="hl">
+</pre>
+
+<script>
+var audioCtx = null;
+var oscillator = [];
+var gainNode = [];
+
+var freq = [329.6276, 246.9417, 195.9977, 146.8324, 110.0000, 82.40689];
+
+function setup() {
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)({latencyHint:"interactive",sampleRate: 8000});
+  for (var i=0; i<6; i++) {
+    oscillator[i] = audioCtx.createOscillator();
+    gainNode[i] = audioCtx.createGain();
+    gainNode[i].gain.setValueAtTime(0, audioCtx.currentTime);
+    oscillator[i].type = 'sine';
+    oscillator[i].frequency.setValueAtTime(110, audioCtx.currentTime); // value in hertz
+    oscillator[i].connect(gainNode[i]);
+    gainNode[i].connect(audioCtx.destination);
+    oscillator[i].start();
+  }
+}
+
+function play(t) {
+  if (!audioCtx) {
+    setup();
+  }
+  var t_ = t.split(",");
+  var s = parseInt(t_[0], 16)-10;
+  var f = parseInt(t_[1], 32)-10;
+  oscillator[s].frequency.setValueAtTime(freq[s]*Math.pow(Math.pow(2,1/12), f), audioCtx.currentTime);
+  gainNode[s].gain.setValueAtTime(0.25, audioCtx.currentTime+0.001);
+}
+
+function stop(t) {
+  var s = parseInt(t.split(",")[0], 16)-10;
+  gainNode[s].gain.setValueAtTime(0, audioCtx.currentTime+0.001);
+}
+
+function stopAll() {
+  for (var i=0; i<6; i++) {
+    gainNode[i].gain.setValueAtTime(0, audioCtx.currentTime+0.001);
+  }
+}
+
+var tuning =
+"c |__c#_|__d__|__d#_|__e__|__f__|__f#_|__g__|__g#_|__a__|__a#_|__b__|__c__|\n" +
+"g#|__a__|__a#_|__b__|__c__|__c#_|__d__|__d#_|__e__|__f__|__f#_|__g__|__g#_|\n" +
+"e |__f__|__f#_|__g__|__g#_|__a__|__a#_|__b__|__c__|__c#_|__d__|__d#_|__e__|\n" +
+"C |__C#_|__D__|__D#_|__e__|__f__|__f#_|__g__|__g#_|__a__|__a#_|__b__|__c__|\n" +
+"G#|__A__|__A#_|__B__|__C__|__C#_|__D__|__D#_|__e__|__f__|__f#_|__g__|__g#_|\n" +
+"E |__F__|__F#_|__G__|__G#_|__A__|__A#_|__B__|__C__|__C#_|__D__|__D#_|__e__|\n" +
+"                                                                           \n" +
+"0    1     2     3     4     5     6     7     8     9     10    11    12    ";
+
+var map = [
+['E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E'],
+['B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'],
+['G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G'],
+['D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D'],
+['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A'],
+['E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E'],
+];
+
+var tab = document.getElementById("tab");
+var out = document.getElementById("out");
+var hl = document.getElementById("hl");
+
+function changeTuning() {
+  var old = tab.value.split("\n\n");
+  var n = [];
+  var o = "";
+  for (var i=0; i<old.length; i++) {
+  	n[i] = old[i].split("|\n");
+    for (var j=0; j<6; j++) {
+      for (var k=12; k>=0; k--) {
+        var k_ = k;
+        if (k<10 && map[j][k].charAt(1)=='#') {k_+=".";}
+        var r = new RegExp(k_, 'g');
+    	  n[i][j] = n[i][j].replace(r, "<span onmouseover='highlight(this.innerText);play(this.title);' ontouchstart='highlight(this.innerText);play(this.title);' onmouseout='stop(this.title);' ontouchend='stop(this.title);' ontouchcancel='stop(this.title);' title='"+(j+10).toString(16)+","+(k+10).toString(32)+"'>"+map[j][k]+"</span>");
+      }
+    }
+    o += n[i].join("|\n")+"\n\n";
+  }
+  out.innerHTML = o;
+}
+
+function highlight(t) {
+  var r = new RegExp('_'+t+'_', 'gi');
+  hl.innerHTML = hl.innerHTML.replace(r, "<span style='background-color:darkgray;'>_"+t+"_</span>");
+}
+
+function clearHl() {
+  hl.innerHTML = tuning.toLowerCase();
+}
+clearHl();
+
+</script>
+</body>
+</html>
